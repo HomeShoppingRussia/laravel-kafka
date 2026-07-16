@@ -10,7 +10,7 @@ abstract class Consumer
     abstract public function handle(ConsumerMessage $message, MessageConsumer $consumer): void;
 
     /** @throws Throwable  */
-    public function failed(string $message, string $topic, Throwable $exception): never
+    public function failed(?string $message, string $topic, Throwable $exception): never
     {
         throw $exception;
     }
